@@ -1,0 +1,7 @@
+public class Node
+{
+    static int number;
+    static int xco;
+    static int yco;
+    static int neighbor;
+}

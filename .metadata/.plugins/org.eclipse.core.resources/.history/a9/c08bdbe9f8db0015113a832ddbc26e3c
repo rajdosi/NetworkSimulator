@@ -1,0 +1,9 @@
+
+public class Node
+{
+	public Node () {
+    int number;
+    int xco;
+    int yco;
+    int neighbor;
+}

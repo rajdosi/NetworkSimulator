@@ -1,0 +1,10 @@
+package NetworkSimBase;
+
+public class NetworkNode
+{
+
+    int number;
+    int xco;
+    int yco;
+    int neighbor;
+}

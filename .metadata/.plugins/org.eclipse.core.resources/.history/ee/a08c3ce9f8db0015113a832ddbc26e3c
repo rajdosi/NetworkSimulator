@@ -1,0 +1,7 @@
+public class Node
+{
+    int number;
+    int xco;
+    int yco;
+    int neighbor;
+}

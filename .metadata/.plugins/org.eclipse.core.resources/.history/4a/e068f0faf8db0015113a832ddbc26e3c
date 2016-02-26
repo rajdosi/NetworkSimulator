@@ -1,0 +1,11 @@
+
+public class NetworkNode
+{
+	public NetworkNode() {
+		
+	}
+    int number;
+    int xco;
+    int yco;
+    int neighbor;
+}
