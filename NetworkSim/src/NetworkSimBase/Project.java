@@ -4,30 +4,28 @@ import java.io.*;
 import java.util.Scanner;
 import NetworkSimBase.NetworkNode;
 
-public class Project {
-    public char myChar[] = new char[500];
-    public int nodenumber[]=new int[100];
-    public int x[]=new int[50];
-    public int y[]=new int[50];
-    public double time=new double[51]{0};
+public class Project{
+    
+    public NetworkNode networkNode = new NetworkNode();
+    public CommonVariables commonVariables = new CommonVariables();
     
     public void broadcast(int num)
     {
        int i,j=0;
        for(i=0;;i++)
        {
-           x[j] = x[j] + i;
-           if(x[j] == x[j+1])
+           commonVariables.xCordinate[j] = commonVariables.xCordinate[j] + i;
+           if(commonVariables.xCordinate[j] == commonVariables.xCordinate[j+1])
            {
-               NetworkNode. x[i];
+               networkNode.xco = commonVariables.xCordinate[i];
                break;
             }
        //System.out.println("The nieghbours of node "+num+" are:");
        } 
        for(i=0;;i++)
        {
-           y[j] = y[j] + i;
-           if(y[j] == y[j+1])
+           commonVariables.yCordinate[j] = commonVariables.yCordinate[j] + i;
+           if(commonVariables.yCordinate[j] == commonVariables.yCordinate[j+1])
            {
                break;
            }
@@ -36,12 +34,13 @@ public class Project {
     } 
     
     public static void main(String[] args) throws IOException {
-        FileReader in = new FileReader("/Users/jayeshparekh/Desktop/manet/mobilityfile.txt");
+        FileReader in = new FileReader("/home/wazza/workplace/NetworkSimulator/NetworkSim/src/mobilityfile.txt");
         BufferedReader br = new BufferedReader(in);
         int i=0,j=0,length=0,l=1,comma,del,dot,at;
         double k;
+        Project project = new Project();
         
-        time[0]=0.0;
+        project.commonVariables.time[0]=0.0;
 
         try {
             
@@ -54,11 +53,11 @@ public class Project {
                 dot=line.indexOf(".");
                 at =line.indexOf("@");
                 int size = line.length();
-                nodenumber[i] = Integer.parseInt(line.substring(0,del));
+                project.commonVariables.nodenumber[i] = Integer.parseInt(line.substring(0,del));
 
-                time[l]= Double.parseDouble(line.substring(at+1,size));
-                x[j] = Integer.parseInt(line.substring(del+1,comma));
-                y[j] = Integer.parseInt(line.substring(comma+1,at));
+                project.commonVariables.time[l]= Double.parseDouble(line.substring(at+1,size));
+                project.commonVariables.xCordinate[j] = Integer.parseInt(line.substring(del+1,comma));
+                project.commonVariables.yCordinate[j] = Integer.parseInt(line.substring(comma+1,at));
                 j++;
                 i++;
                 l++;
@@ -72,24 +71,20 @@ public class Project {
         }
         for(i=0;i<50;i++)
         {
-            System.out.println(nodenumber[i]);
-            
+            System.out.println(project.commonVariables.nodenumber[i]);       
         }
         for(i=0;i<40;i++)
       {
-          long tx = (long) (time[i+1]-time[i]);
+          long tx = (long) (project.commonVariables.time[i+1]-project.commonVariables.time[i]);
           try {
               Thread.sleep(tx*10);
             } catch (InterruptedException ie) {
                 //Handle exception
             }
-            System.out.println("node "+nodenumber[i]+" at "+x[i]+","+y[i]+" at time "+time[i]);
-            broadcast(nodenumber[i]);
+            System.out.println("node "+ project.commonVariables.nodenumber[i]+" at "+project.commonVariables.xCordinate[i]+","+project.commonVariables.yCordinate[i]+" at time "+ project.commonVariables.time[i]);
+            project.broadcast(project.commonVariables.nodenumber[i]);
         }
-        broadcast(nodenumber[0]);
-        
-       
-
+        project.broadcast(project.commonVariables.nodenumber[0]); 
     }
     
 }
