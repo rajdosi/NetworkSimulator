@@ -15,6 +15,7 @@ public class Project{
     
 	private static int count = 0;
     private static Map<Integer, NetworkNode> GlobalDataStructure = new HashMap<>();
+    private CommonVariables commonVariables = new CommonVariables();
     private static List<NetworkNode> networkNode= new ArrayList<>();
     
 //    public void broadcast(int num)
