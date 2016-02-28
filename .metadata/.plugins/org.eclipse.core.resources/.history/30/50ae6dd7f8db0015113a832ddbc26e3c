@@ -1,7 +1,0 @@
-public class Node
-{
-     int number;
-    static int xco;
-    static int yco;
-    static int neighbor;
-}
