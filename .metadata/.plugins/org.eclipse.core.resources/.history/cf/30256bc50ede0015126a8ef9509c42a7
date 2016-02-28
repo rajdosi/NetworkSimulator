@@ -1,0 +1,10 @@
+package NetworkSimBase;
+
+public class NetworkNode
+{
+    public int nodeID;
+    public int localXCoordinate;
+    public int localYCoordinate;
+    public int neighborCount;
+    
+}

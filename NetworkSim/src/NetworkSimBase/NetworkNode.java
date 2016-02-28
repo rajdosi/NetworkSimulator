@@ -1,13 +1,15 @@
 package NetworkSimBase;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class NetworkNode
 {
-    public int number;
-    public int xco;
-    public int yco;
-    public int neighbor;
+    public int nodeID = -1;
+    public int localXCoordinate;
+    public int localYCoordinate;
+    public int neighborCount;
+    public double lastUpdatedTime;
     
-    public void setXco(int xco){
-    	this.xco = xco;
-    }
+    public Set<Integer> neighbourList = new HashSet<>();
 }

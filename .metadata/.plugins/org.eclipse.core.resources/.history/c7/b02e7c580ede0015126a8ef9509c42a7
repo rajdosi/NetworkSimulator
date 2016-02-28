@@ -1,0 +1,13 @@
+package NetworkSimBase;
+
+public class NetworkNode
+{
+    public int number;
+    public int xco;
+    public int yco;
+    public int neighbor;
+    
+    public void setXco(int xco){
+    	this.xco = xco;
+    }
+}
