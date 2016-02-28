@@ -15,7 +15,6 @@ public class Project{
     
 	private static int count = 0;
     private static Map<Integer, NetworkNode> GlobalDataStructure = new HashMap<>();
-    private static List<NetworkNode> networkNode= new ArrayList<>();
     
 //    public void broadcast(int num)
 //    {
@@ -27,10 +26,10 @@ public class Project{
 //           {
 //               networkNode.localXCoordinate = commonVariables.xCordinate[i];
 //               break;
-//            }
 //       //System.out.println("The nieghbours of node "+num+" are:");
 //       } 
 //       for(i=0;;i++)
+//            }
 //       {
 //           commonVariables.yCordinate[j] = commonVariables.yCordinate[j] + i;
 //           if(commonVariables.yCordinate[j] == commonVariables.yCordinate[j+1])
@@ -59,8 +58,7 @@ public class Project{
                 temporaryNode.localXCoordinate = Integer.parseInt(line.substring(del+1,comma));
                 temporaryNode.localYCoordinate = Integer.parseInt(line.substring(comma+1,at));
                 
-                networkNode.add(temporaryNode);
-                GlobalDataStructure.put(temporaryNode.nodeID,networkNode.get(count));
+                GlobalDataStructure.put(temporaryNode.nodeID,temporaryNode);
                 count++;
         	} 
         }
