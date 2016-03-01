@@ -1,5 +1,6 @@
 .metadata/
 NetworkSim/.settings/
+NetworkSim/bin/
 NetworkSim/.classpath
 NetworkSim/.project
 
